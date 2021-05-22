@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+.nota {
+   display: flex;
+   padding: 0.5em;
+   margin: 0.5em;
+   cursor: pointer;
+   border: 1px solid;
+   align-items: center;
+   
+   :first-child {
+      flex:1;
+   }
+   
+   .btn-borrar {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin:0.5em;
+   }
+}
+
+#actualizar {
+   text-align: center;
+}
+
+#btn-add-container {
+   display:flex;
+   justify-content: center;
+}
+
+#notas-abiertas .nota {
+   background: red;
+}
+
+#notas-proceso .nota {
+   background: yellow;
+}
+
+#notas-cerradas .nota {
+   background: lightblue;
+}

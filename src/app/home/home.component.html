@@ -1,0 +1,66 @@
+<div id="notas-container" class="row">
+   <div id="notas-abiertas" class="col-sm-4">
+      <ng-container *ngFor="let nota of notas">
+         <ng-container *ngIf="nota.estado == 0">
+            <div id="nota-{{nota.id}}" class="nota" (click)="editarNota(nota.id)">
+               <div>
+                  <h2>{{nota.titulo}}</h2>
+                  <p>{{nota.descripcion}}</p>
+               </div>
+               <div class="btn-borrar">X</div>
+            </div>
+         </ng-container>
+      </ng-container>
+   </div>
+
+   <div id="notas-proceso" class="col-sm-4">
+      <ng-container *ngFor="let nota of notas">
+         
+         <ng-container *ngIf="nota.estado == 1">
+            <div id="nota-{{nota.id}}" class="nota" (click)="editarNota(nota.id)">
+               <div>
+                  <h2>{{nota.titulo}}</h2>
+                  <p>{{nota.descripcion}}</p>
+               </div>
+               <div class="btn-borrar">X</div>
+            </div>
+         </ng-container>
+       
+      </ng-container>
+   </div>
+
+   <div id="notas-cerradas" class="col-sm-4">
+      <ng-container *ngFor="let nota of notas">
+         
+         <ng-container *ngIf="nota.estado == 2">
+            <div id="nota-{{nota.id}}" class="nota" (click)="editarNota(nota.id)">
+               <div>
+                  <h2>{{nota.titulo}}</h2>
+                  <p>{{nota.descripcion}}</p>
+               </div>
+               <div class="btn-borrar">X</div>
+            </div>
+         </ng-container>
+       
+      </ng-container>
+   </div>
+   
+   <div id="btn-add-container" class="col-sm-12">
+      <div id="btn-add" class="btn btn-default" (click)="editarNota(-1)"> + Adicionar </div>
+   </div>
+</div>
+
+
+
+<div id="actualizar" style="display: none">
+   <label>Titulo</label><br><input type="text"><br>
+   <label>Estado</label><br>
+   <select>
+      <option>Abierta</option>
+      <option>En Proceso</option>
+      <option>Cerrada</option>
+   </select><br>
+   <label>Descripcion</label><br>
+   <textarea></textarea><br>
+   <div id="btn-update" class="btn btn-default" (click)="actualizarNotas()"> Actualizar </div>
+</div>
